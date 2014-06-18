@@ -3,6 +3,8 @@ module MailForm
     include ActiveModel::Conversion
     extend ActiveModel::Naming
     extend ActiveModel::Translation
+    include ActiveModel::Validations
+
     include ActiveModel::AttributeMethods
 
     attribute_method_prefix 'clear_'
@@ -13,6 +15,10 @@ module MailForm
       define_attribute_methods(names)
     end
 
+    def persisted?
+      false
+    end
+    
     protected
 
     def clear_attribute(attribute)
