@@ -1,6 +1,8 @@
 module MailForm
   class Base
     include ActiveModel::Conversion
+    extend ActiveModel::Naming
+    extend ActiveModel::Translation
     include ActiveModel::AttributeMethods
 
     attribute_method_prefix 'clear_'
