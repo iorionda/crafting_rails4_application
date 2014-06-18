@@ -9,8 +9,8 @@ class MailFormTest < ActiveSupport::TestCase
     sample.email = "user@example.com"
     assert_equal "user@example.com", sample.email
 
-    sample.clear_name!
-    sample.clear_email!
+    sample.clear_name
+    sample.clear_email
     assert_nil sample.name
     assert_nil sample.email
   end
