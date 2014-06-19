@@ -10,9 +10,16 @@ module MailForm
     attribute_method_prefix 'clear_'
     attribute_method_suffix '?'
 
+    # 1) Define a class attribute and initialize it.
+    class_attribute :attribute_names
+    self.attribute_names = []
+
     def self.attributes(*names)
       attr_accessor(*names)
       define_attribute_methods(names)
+
+      # 2) Add new names as they are defined.
+      self.attribute_names += names
     end
 
     def persisted?
