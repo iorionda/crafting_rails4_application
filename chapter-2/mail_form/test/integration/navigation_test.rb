@@ -14,7 +14,7 @@ class NavigationTest < ActiveSupport::IntegrationCase
 
     click_button 'Deliver'
 
-    assert_match 'Your message was successfully send.', page.body
+    assert_match 'Your message was successfully sent.', page.body
 
     assert_equal 1, ActionMailer::Base.deliveries.size
     mail = ActionMailer::Base.deliveries.last
