@@ -8,8 +8,8 @@ class NavigationTest < ActiveSupport::IntegrationCase
   test 'sends an e-mail after filling the contact form' do
     visit '/'
 
-    fill_in 'Name', with: 'Jhon Doe'
-    fill_in 'Email', with: 'jhon.doe@example.com'
+    fill_in 'Name',    with: 'Jhon Doe'
+    fill_in 'Email',   with: 'jhon.doe@example.com'
     fill_in 'Message', with: 'MailForm rocks!'
 
     click_button 'Deliver'
