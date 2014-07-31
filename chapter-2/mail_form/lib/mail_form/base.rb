@@ -24,7 +24,7 @@ module MailForm
 
     def initialize(attributes = {})
       attributes.each do |attr, value|
-        self.public_send("#{attr}=", value)
+        public_send("#{attr}=", value)
       end if attributes
     end
 
